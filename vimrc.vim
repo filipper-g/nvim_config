@@ -1,20 +1,19 @@
 call plug#begin()
 
-Plug 'rust-lang/rust.vim'
-Plug 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'              "colortheme
 
-Plug 'neovim/nvim-lspconfig'
+Plug 'neovim/nvim-lspconfig'        "lsp configuration
 
-Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/cmp-nvim-lsp'   
+Plug 'hrsh7th/nvim-cmp'             "code completion
+Plug 'hrsh7th/cmp-buffer'           "code completion
+Plug 'hrsh7th/cmp-path'             "code completion
+Plug 'hrsh7th/cmp-cmdline'          "code completion
+Plug 'hrsh7th/cmp-nvim-lsp'         "code completion
 
-Plug 'nvim-tree/nvim-web-devicons' " Recommended (for coloured icons)
-Plug 'akinsho/bufferline.nvim', { 'tag': '*' }
+Plug 'nvim-tree/nvim-web-devicons' "for coloured icons
+Plug 'akinsho/bufferline.nvim', { 'tag': '*' } "tabline for buffers
 
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} "treesitter
 call plug#end()
 
 
@@ -23,11 +22,9 @@ set background=dark
 colorscheme gruvbox
 filetype plugin indent on
 
-" Always open netrw in a vertical split on the left
+"Browser settings
 let g:netrw_browse_split = 0
 " let g:netrw_altv = 1
-let g:netrw_liststyle = 3 " tree-style listing
-let g:netrw_winsize = 25  " width in columns
-
-" Hide banner for a cleaner look
+let g:netrw_liststyle = 3 
+let g:netrw_winsize = 25 
 let g:netrw_banner = 0
