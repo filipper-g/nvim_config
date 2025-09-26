@@ -5,14 +5,17 @@
 --   ->Clang (c compiler)
 -- ->grep  (optional)
 -- ->gopls (optional)
+-- ->texlab (optional)
 
 --system specific parameters:
 local clangd_path="C:\\Program Files\\LLVM\\bin\\clangd.exe"
 local clang_path="C:\\Program Files\\LLVM\\bin\\clang.exe"
 local neovide_dir="C:\\Program Files\\Neovide"
 local neovim_dir="C:\\Program Files\\Neovim"
+local texlab_path="C:\\Program Files\\texlab\\texlab.exe"
 local gopls_installed=true
 local tresitter_installed=true
+local texlab_installed=true
 
 --load vimrc file (mostly for vimplug)
 local vimrc = vim.fn.stdpath("config") .. "/vimrc.vim"
@@ -69,6 +72,14 @@ if gopls_installed == true then
 				gofumpt = true,
 			},
 		},
+		on_attach = on_attach,
+		capabilities = capabilities
+	})
+end
+
+if texlab_installed == true then
+	lspconfig.texlab.setup({
+		cmd = { texlab_path },
 		on_attach = on_attach,
 		capabilities = capabilities
 	})
