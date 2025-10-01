@@ -32,6 +32,8 @@ vim.opt.signcolumn = "yes"
 vim.opt.termguicolors = true
 require("bufferline").setup{}
 
+require("netrw").setup{}
+
 --lsp settings
 local lspconfig = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
