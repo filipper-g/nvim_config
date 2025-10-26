@@ -15,7 +15,7 @@ Plug 'akinsho/bufferline.nvim', { 'tag': '*' } "tabline for buffers
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} "treesitter
 
-Plug 'prichrd/netrw.nvim'
+Plug 'nvim-tree/nvim-tree.lua'
 call plug#end()
 
 
@@ -23,11 +23,3 @@ syntax enable
 set background=dark
 colorscheme gruvbox
 filetype plugin indent on
-
-"Browser settings
-let g:netrw_browse_split = 0
-let g:netrw_altv = 1
-let g:netrw_liststyle = 3 
-"let g:netrw_winsize = 25 
-let g:netrw_banner = 0
-let g:netrw_tree_split = 4

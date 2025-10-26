@@ -17,10 +17,13 @@ local gopls_installed=true
 local tresitter_installed=true
 local texlab_installed=true
 
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 --load vimrc file (mostly for vimplug)
 local vimrc = vim.fn.stdpath("config") .. "/vimrc.vim"
 vim.cmd.source(vimrc)
-
+vim.api.nvim_create_user_command('Ert', 'NvimTreeToggle', {})
 --some options
 vim.opt.relativenumber = true
 vim.opt.number = true
@@ -32,7 +35,7 @@ vim.opt.signcolumn = "yes"
 vim.opt.termguicolors = true
 require("bufferline").setup{}
 
-require("netrw").setup{}
+require("nvim-tree").setup()
 
 --lsp settings
 local lspconfig = require('lspconfig')
@@ -114,7 +117,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
 		if cwd == neovide_dir or cwd == neovim_dir then
 			-- Change to your preferred directory
 			vim.cmd("cd " .. home)
-			vim.cmd("Ex")
+			-- vim.cmd("Ex")
 		end
 	end,
 })
